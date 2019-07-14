@@ -240,8 +240,8 @@ class FoundClientViewController: UIViewController, MFMailComposeViewControllerDe
         if MFMailComposeViewController.canSendMail() {
             let mail = MFMailComposeViewController()
             mail.mailComposeDelegate = self
-            mail.setToRecipients(["rodrigojs@gmail.com"])
-            mail.setMessageBody("<p>Olá,  \(self.clientData.nome), tudo bem?</p></p>Estamos aqui para alertá-lo quanto aos surtos de sarampo que só neste curto intervalo de tempo aumentaram em 300%.</p></p>Então o quanto antes, procure tomar vacina no posto mais próximo. Além disso, analisamos uma ótima oferta para você, quanto a parte de seguro aeronáutico, levando em consideração a sua profissão.</p>Caso deseje realizar este investimento responda este email e entraremos em contato logo em seguida. Ajude-nos a captar novas pessoas! </p></p></p></p>Você sabia que ao indicar outras pessoas você pode adquirir descontos assim como a pessoa indicada. Então tá esperando o que?! envie seu código de compartilhamento para o máximo de pessoas possível!!</p>", isHTML: true)
+            mail.setToRecipients([self.clientData.email])
+            mail.setMessageBody("<p>Olá, \(self.clientData.nome), tudo bem?</p></p>Estamos aqui para alertá-lo quanto aos surtos de sarampo que só neste curto intervalo de tempo aumentaram em 300%.</p></p>Então o quanto antes, procure tomar vacina no posto mais próximo. Além disso, analisamos uma ótima oferta para você, quanto a parte de seguro aeronáutico, levando em consideração a sua profissão.</p>Caso deseje realizar este investimento responda este email e entraremos em contato logo em seguida. Ajude-nos a captar novas pessoas! </p></p></p></p>Você sabia que ao indicar outras pessoas você pode adquirir descontos assim como a pessoa indicada. Então tá esperando o que?! envie seu código de compartilhamento para o máximo de pessoas possível!!</p>", isHTML: true)
             
             present(mail, animated: true)
         } else {
