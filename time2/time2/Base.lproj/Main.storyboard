@@ -42,11 +42,11 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ID @@@" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qtI-V8-y78">
-                                <rect key="frame" x="215" y="143" width="85" height="27"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ID KFP13jk5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qtI-V8-y78">
+                                <rect key="frame" x="215" y="143" width="129" height="27"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="27" id="RzS-2c-0lo"/>
-                                    <constraint firstAttribute="width" constant="85" id="wTJ-P0-eZM"/>
+                                    <constraint firstAttribute="width" constant="129" id="wTJ-P0-eZM"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <nil key="textColor"/>
@@ -476,7 +476,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O9S-ko-bbh" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="AiA-Wh-frV" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="998" y="858"/>
+            <point key="canvasLocation" x="998" y="831"/>
         </scene>
         <!--Register2 View Controller-->
         <scene sceneID="xJd-3F-Mwv">
@@ -697,7 +697,7 @@
                                     <constraint firstAttribute="width" constant="325" id="vfM-XV-3ot"/>
                                 </constraints>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Encontramos um novo plano de seguro de vida que será ideal para Flávio! Gostaria de enviar um email para notificá-lo?" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="IMc-OH-kXx">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Encontramos um novo plano de seguro de vida que será ideal para André! Gostaria de enviar um email para notificá-lo?" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="IMc-OH-kXx">
                                 <rect key="frame" x="25" y="281" width="325" height="70"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -774,7 +774,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xFK-4w-lhn" sceneMemberID="firstResponder"/>
                 <exit id="I8Z-ih-tfx" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1829.5999999999999" y="857.72113943028489"/>
+            <point key="canvasLocation" x="1830" y="831"/>
         </scene>
     </scenes>
     <resources>

@@ -28,12 +28,12 @@ class SearchClientViewController: UIViewController, UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)
         
-        guard let id = self.searchTextField.text else {
-            createAlert(withTitle: "Invalid ID", Message: "The user ID you're looking for doesn't exist.", andActionTitle: "ok")
+        guard let name = self.searchTextField.text else {
+            createAlert(withTitle: "Invalid name", Message: "The user name you're looking for doesn't exist.", andActionTitle: "ok")
             return false
         }
-        print(id)
-        getClientData(withID: id)
+        print(name)
+        getClientData(withName: name)
         self.searchTextField.text = ""
         
         return false
@@ -42,9 +42,9 @@ class SearchClientViewController: UIViewController, UITextFieldDelegate {
     /// This function makes a call for the Firebase server to get the right user info.
     ///
     /// - Parameter id: The id that is going to be used to query the user info.
-    func getClientData(withID id: String) {
+    func getClientData(withName name: String) {
         let db = Firestore.firestore()
-        db.collection("usuarios").whereField("idusuario", isEqualTo: id).getDocuments { (snapshot, error) in
+        db.collection("usuarios").whereField("nome", isEqualTo: name).getDocuments { (snapshot, error) in
             if error != nil {
                 print(error)
             } else {

@@ -14,7 +14,6 @@ class FoundClientViewController: UIViewController, MFMailComposeViewControllerDe
     // Variables declaration
     var clientData: ClientStruct!
     var planIndicated: String!
-    var newPlan: Bool = false
     
     // Outlets declaration
     @IBOutlet weak var clientNameLabel: UILabel!
@@ -26,9 +25,11 @@ class FoundClientViewController: UIViewController, MFMailComposeViewControllerDe
         self.clientNameLabel.text = self.clientData.nome
         self.clientIDLabel.text = "ID " + self.clientData.idusuario
         
-        let bigBoost = ["Datasets": "emails","q": "doc{09177466561}"]
+        // This is the parameter that sets-up the body for the BigBoost API.
+        let bigBoost = ["Datasets":"emails", "q":"doc{09177466561}"]
         APIController.post(withParameters: bigBoost)
         
+        // This is the parameter that sets-up the body for the Mongeral API.
         let mongeral = """
 {
     \"PROPOSTA\": {
@@ -215,12 +216,13 @@ class FoundClientViewController: UIViewController, MFMailComposeViewControllerDe
 """
         let parameterMongeral = convert(text: mongeral)
         APIController.post(withParameters: parameterMongeral!)
-        
-        if newPlan {
-            
-        }
+
     }
     
+    /// This converts the string into a object of type [String:Any]
+    ///
+    /// - Parameter text: The string that is going to be set-up.
+    /// - Returns: The 
     func convert(text: String) -> [String: Any]? {
         if let data = text.data(using: .utf8) {
             do {
