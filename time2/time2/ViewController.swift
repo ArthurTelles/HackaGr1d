@@ -16,7 +16,6 @@ class ViewController: UIViewController {
         
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         
 //        APIController.get(forPath: "")
 //        let parameters = ["username": "@Arthur", "tweet": "Dale"]
@@ -61,4 +60,8 @@ class ViewController: UIViewController {
         }
     }
     
+    /// Function that enables the unwind segue animation for this view from the preStatus.
+    ///
+    /// - Parameter sender: The object that performs the transition between two VC's.
+    @IBAction func didUnwindFromPreStatus(_ sender: UIStoryboardSegue) {}
 }
