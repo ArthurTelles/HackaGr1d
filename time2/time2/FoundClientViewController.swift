@@ -222,7 +222,7 @@ class FoundClientViewController: UIViewController, MFMailComposeViewControllerDe
     /// This converts the string into a object of type [String:Any]
     ///
     /// - Parameter text: The string that is going to be set-up.
-    /// - Returns: The 
+    /// - Returns: The
     func convert(text: String) -> [String: Any]? {
         if let data = text.data(using: .utf8) {
             do {
@@ -234,10 +234,12 @@ class FoundClientViewController: UIViewController, MFMailComposeViewControllerDe
         return nil
     }
     
-    @IBAction func enviarEmailButton(_ sender: UIButton) {
-        sendEmail()
-    }
+    /// This function calls the method to send an email using the given data.
+    ///
+    /// - Parameter sender: A button that interacts with the touch of the user.
+    @IBAction func enviarEmailButton(_ sender: UIButton) { sendEmail() }
     
+    /// This function sends an email when called for a specific client.
     func sendEmail() {
         if MFMailComposeViewController.canSendMail() {
             let mail = MFMailComposeViewController()
@@ -251,6 +253,12 @@ class FoundClientViewController: UIViewController, MFMailComposeViewControllerDe
         }
     }
     
+    /// This function is responsable for monitoring and controlling the email view.
+    ///
+    /// - Parameters:
+    ///   - controller: The view of the email that is presented for the user.
+    ///   - result: The object that is set when the view is dismissed.
+    ///   - error: A value that represents an error.
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         controller.dismiss(animated: true)
     }
