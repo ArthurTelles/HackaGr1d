@@ -8,6 +8,7 @@ target 'time2' do
   # Pods for time2
   pod 'Firebase/Core'
   pod 'Firebase/Database'
+  pod 'Firebase/Firestore'
 
   target 'time2Tests' do
     inherit! :search_paths

@@ -32,8 +32,8 @@ struct APIController {
                 } catch {
                     print(error)
                 }
-                
             }
+            
             }.resume()
     }
     
