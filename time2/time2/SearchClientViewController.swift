@@ -47,6 +47,7 @@ class SearchClientViewController: UIViewController, UITextFieldDelegate {
         db.collection("usuarios").whereField("nome", isEqualTo: name).getDocuments { (snapshot, error) in
             if error != nil {
                 print(error)
+                self.createAlert(withTitle: "Invalid name", Message: "The user name you're looking for doesn't exist.", andActionTitle: "ok")
             } else {
                 for document in (snapshot?.documents)! {
                     guard let cpf = document.data()["cpf"] as? String else { return }

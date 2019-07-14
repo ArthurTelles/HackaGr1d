@@ -32,13 +32,13 @@
                                     <constraint firstAttribute="height" constant="128" id="BYI-qa-4Td"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome do corretor" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KEn-7z-F37">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="João Barcelar" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KEn-7z-F37">
                                 <rect key="frame" x="215" y="113" width="129" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="129" id="1Kj-He-MX1"/>
                                     <constraint firstAttribute="height" constant="20" id="6GU-tf-Rl2"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -48,8 +48,8 @@
                                     <constraint firstAttribute="height" constant="27" id="RzS-2c-0lo"/>
                                     <constraint firstAttribute="width" constant="129" id="wTJ-P0-eZM"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" red="0.55294117649999996" green="0.55294117649999996" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cadastrarBuscar" translatesAutoresizingMaskIntoConstraints="NO" id="z5k-OO-bMh">
@@ -170,6 +170,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="middleLine" destination="6cU-gu-zHN" id="fEF-0Y-S5v"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -197,8 +200,8 @@
                                     <constraint firstAttribute="width" constant="61" id="sb7-83-APg"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Cancel">
-                                    <color key="titleColor" red="0.99205261468887329" green="0.49293235492471216" blue="0.32654493322708883" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <segue destination="kxl-7A-BfG" kind="unwind" unwindAction="didUnwindFromPreStatus:" id="Wb4-Va-B01"/>
@@ -421,8 +424,8 @@
                                     <constraint firstAttribute="height" constant="36" id="HiK-LC-9Iy"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Cancel">
-                                    <color key="titleColor" red="0.99205261469999995" green="0.49293235489999998" blue="0.3265449332" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <segue destination="AiA-Wh-frV" kind="unwind" unwindAction="didUnwindFromPreStatus:" id="Ltm-W2-dAK"/>
@@ -501,7 +504,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Back">
-                                    <color key="titleColor" red="0.99205261469999995" green="0.49293235489999998" blue="0.3265449332" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <segue destination="uLC-3E-aKt" kind="unwind" unwindAction="didUnwindFromPreStatus:" id="Eme-D7-tZ7"/>
@@ -671,12 +674,12 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome do cliente" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dpF-B5-Rov">
-                                <rect key="frame" x="215" y="138" width="129" height="20"/>
+                                <rect key="frame" x="215" y="138" width="144" height="20"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="129" id="1VU-9f-rb7"/>
+                                    <constraint firstAttribute="width" constant="144" id="1VU-9f-rb7"/>
                                     <constraint firstAttribute="height" constant="20" id="k8p-LS-d0c"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -686,8 +689,8 @@
                                     <constraint firstAttribute="width" constant="129" id="Pih-AF-eiA"/>
                                     <constraint firstAttribute="height" constant="27" id="oY5-wg-EAK"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" red="0.55294117649999996" green="0.55294117649999996" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="square" translatesAutoresizingMaskIntoConstraints="NO" id="GKM-VL-11e">
@@ -736,7 +739,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Back">
-                                    <color key="titleColor" red="0.99205261469999995" green="0.49293235489999998" blue="0.3265449332" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <segue destination="I8Z-ih-tfx" kind="unwind" unwindAction="didUnwindFromPreStatus:" id="wYq-5L-pGV"/>
@@ -774,7 +777,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xFK-4w-lhn" sceneMemberID="firstResponder"/>
                 <exit id="I8Z-ih-tfx" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1830" y="831"/>
+            <point key="canvasLocation" x="1829.5999999999999" y="830.54187192118229"/>
         </scene>
     </scenes>
     <resources>
