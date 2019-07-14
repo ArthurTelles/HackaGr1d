@@ -10,8 +10,7 @@ import UIKit
 
 class FoundClientViewController: UIViewController {
     
-    var clientName: String = ""
-    var clientID: String = ""
+    var clientData: ClientStruct!
     
     @IBOutlet weak var clientNameLabel: UILabel!
     @IBOutlet weak var clientIDLabel: UILabel!
@@ -19,7 +18,9 @@ class FoundClientViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.clientNameLabel.text = self.clientName
-        self.clientIDLabel.text = "ID " + self.clientID
+        self.clientNameLabel.text = self.clientData.nome
+        self.clientIDLabel.text = "ID " + self.clientData.idusuario
     }
+    
+    
 }

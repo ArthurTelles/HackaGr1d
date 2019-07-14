@@ -69,8 +69,7 @@ class SearchClientViewController: UIViewController, UITextFieldDelegate {
         if segue.destination is FoundClientViewController
         {
             let vc = segue.destination as? FoundClientViewController
-            vc?.clientName = self.userStruct.nome
-            vc?.clientID = self.userStruct.idusuario
+            vc?.clientData = self.userStruct
         }
     }
 }
