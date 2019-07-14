@@ -15,7 +15,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         
 //        APIController.get(forPath: "")
-//        let parameters = ["username": "@kilo_loco", "tweet": "HelloWorld"]
+//        let parameters = ["username": "@Arthur", "tweet": "Dale"]
 //        APIController.post(withParameters: parameters)
     }
 
