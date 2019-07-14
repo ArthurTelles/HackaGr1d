@@ -11,6 +11,7 @@ import Foundation
 /// Struct that contains the data of the user.
 struct ClientStruct {
     var cpf: String
+    var email: String
     var endereco: String
     var idade: String
     var idusuario: String

@@ -21,12 +21,19 @@ class SearchClientViewController: UIViewController, UITextFieldDelegate {
         self.searchTextField.delegate = self
     }
     
+    /// This function is called everytime the return button is pressed on the keyboard.
+    ///
+    /// - Parameter textField: An object that displays a aditable text.
+    /// - Returns: A boolean indicator for the textfield.
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)
         
-        guard let id = self.searchTextField.text else { return false }
-        print(id)
-        getClientData(withID: id)
+        guard let name = self.searchTextField.text else {
+            createAlert(withTitle: "Invalid name", Message: "The user name you're looking for doesn't exist.", andActionTitle: "ok")
+            return false
+        }
+        print(name)
+        getClientData(withName: name)
         self.searchTextField.text = ""
         
         return false
@@ -35,14 +42,15 @@ class SearchClientViewController: UIViewController, UITextFieldDelegate {
     /// This function makes a call for the Firebase server to get the right user info.
     ///
     /// - Parameter id: The id that is going to be used to query the user info.
-    func getClientData(withID id: String) {
+    func getClientData(withName name: String) {
         let db = Firestore.firestore()
-        db.collection("usuarios").whereField("idusuario", isEqualTo: id).getDocuments { (snapshot, error) in
+        db.collection("usuarios").whereField("nome", isEqualTo: name).getDocuments { (snapshot, error) in
             if error != nil {
                 print(error)
             } else {
                 for document in (snapshot?.documents)! {
                     guard let cpf = document.data()["cpf"] as? String else { return }
+                    guard let email = document.data()["email"] as? String else { return }
                     guard let endereco = document.data()["endereco"] as? String else { return }
                     guard let idade = document.data()["idade"] as? String else { return }
                     guard let idusuario = document.data()["idusuario"] as? String else { return }
@@ -54,7 +62,7 @@ class SearchClientViewController: UIViewController, UITextFieldDelegate {
                     guard let sexo = document.data()["sexo"] as? String else { return }
                     guard let telefone = document.data()["telefone"] as? String else { return }
                     
-                    self.userStruct = ClientStruct(cpf: cpf, endereco: endereco, idade: idade, idusuario: idusuario, nome: nome, profissao: profissao, renda: renda, rg: rg, seguro: seguro, sexo: sexo, telefone: telefone)
+                    self.userStruct = ClientStruct(cpf: cpf, email: email, endereco: endereco, idade: idade, idusuario: idusuario, nome: nome, profissao: profissao, renda: renda, rg: rg, seguro: seguro, sexo: sexo, telefone: telefone)
                     
                     self.performSegue(withIdentifier: "foundUser", sender: nil)
                     
@@ -64,6 +72,23 @@ class SearchClientViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    /// This function creates alerts that will be presented immediately on the screen.
+    ///
+    /// - Parameters:
+    ///   - title: The title presented on the alert.
+    ///   - message: The message description of the alert.
+    ///   - actionTitle: The action that will be present on the alert.
+    func createAlert(withTitle title: String, Message message: String, andActionTitle actionTitle: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: actionTitle, style: .default, handler: nil))
+        self.present(alert, animated: true)
+    }
+    
+    /// This function is called everytime a segue is going to be called between two view controllers.
+    ///
+    /// - Parameters:
+    ///   - segue: An object that performs a visual transition between two view controllers.
+    ///   - sender: The object that is calling the segue action.
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
         if segue.destination is FoundClientViewController

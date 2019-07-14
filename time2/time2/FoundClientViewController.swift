@@ -14,7 +14,6 @@ class FoundClientViewController: UIViewController, MFMailComposeViewControllerDe
     // Variables declaration
     var clientData: ClientStruct!
     var planIndicated: String!
-    var newPlan: Bool = false
     
     // Outlets declaration
     @IBOutlet weak var clientNameLabel: UILabel!
@@ -26,9 +25,11 @@ class FoundClientViewController: UIViewController, MFMailComposeViewControllerDe
         self.clientNameLabel.text = self.clientData.nome
         self.clientIDLabel.text = "ID " + self.clientData.idusuario
         
-        let bigBoost = ["Datasets": "emails","q": "doc{09177466561}"]
+        // This is the parameter that sets-up the body for the BigBoost API.
+        let bigBoost = ["Datasets":"emails", "q":"doc{09177466561}"]
         APIController.post(withParameters: bigBoost)
         
+        // This is the parameter that sets-up the body for the Mongeral API.
         let mongeral = """
 {
     \"PROPOSTA\": {
@@ -215,12 +216,13 @@ class FoundClientViewController: UIViewController, MFMailComposeViewControllerDe
 """
         let parameterMongeral = convert(text: mongeral)
         APIController.post(withParameters: parameterMongeral!)
-        
-        if newPlan {
-            
-        }
+
     }
     
+    /// This converts the string into a object of type [String:Any]
+    ///
+    /// - Parameter text: The string that is going to be set-up.
+    /// - Returns: The
     func convert(text: String) -> [String: Any]? {
         if let data = text.data(using: .utf8) {
             do {
@@ -232,16 +234,18 @@ class FoundClientViewController: UIViewController, MFMailComposeViewControllerDe
         return nil
     }
     
-    @IBAction func enviarEmailButton(_ sender: UIButton) {
-        sendEmail()
-    }
+    /// This function calls the method to send an email using the given data.
+    ///
+    /// - Parameter sender: A button that interacts with the touch of the user.
+    @IBAction func enviarEmailButton(_ sender: UIButton) { sendEmail() }
     
+    /// This function sends an email when called for a specific client.
     func sendEmail() {
         if MFMailComposeViewController.canSendMail() {
             let mail = MFMailComposeViewController()
             mail.mailComposeDelegate = self
-            mail.setToRecipients(["rodrigojs@gmail.com"])
-            mail.setMessageBody("<p>Olá,  \(self.clientData.nome), tudo bem?</p></p>Estamos aqui para alertá-lo quanto aos surtos de sarampo que só neste curto intervalo de tempo aumentaram em 300%.</p></p>Então o quanto antes, procure tomar vacina no posto mais próximo. Além disso, analisamos uma ótima oferta para você, quanto a parte de seguro aeronáutico, levando em consideração a sua profissão.</p>Caso deseje realizar este investimento responda este email e entraremos em contato logo em seguida. Ajude-nos a captar novas pessoas! </p></p></p></p>Você sabia que ao indicar outras pessoas você pode adquirir descontos assim como a pessoa indicada. Então tá esperando o que?! envie seu código de compartilhamento para o máximo de pessoas possível!!</p>", isHTML: true)
+            mail.setToRecipients([self.clientData.email])
+            mail.setMessageBody("<p>Olá, \(self.clientData.nome), tudo bem?</p></p>Estamos aqui para alertá-lo quanto aos surtos de sarampo que só neste curto intervalo de tempo aumentaram em 300%.</p></p>Então o quanto antes, procure tomar vacina no posto mais próximo. Além disso, analisamos uma ótima oferta para você, quanto a parte de seguro aeronáutico, levando em consideração a sua profissão.</p>Caso deseje realizar este investimento responda este email e entraremos em contato logo em seguida. Ajude-nos a captar novas pessoas! </p></p></p></p>Você sabia que ao indicar outras pessoas você pode adquirir descontos assim como a pessoa indicada. Então tá esperando o que?! envie seu código de compartilhamento para o máximo de pessoas possível!!</p>", isHTML: true)
             
             present(mail, animated: true)
         } else {
@@ -249,6 +253,12 @@ class FoundClientViewController: UIViewController, MFMailComposeViewControllerDe
         }
     }
     
+    /// This function is responsable for monitoring and controlling the email view.
+    ///
+    /// - Parameters:
+    ///   - controller: The view of the email that is presented for the user.
+    ///   - result: The object that is set when the view is dismissed.
+    ///   - error: A value that represents an error.
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         controller.dismiss(animated: true)
     }
