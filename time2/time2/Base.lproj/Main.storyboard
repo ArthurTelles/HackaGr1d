@@ -613,38 +613,51 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="square" translatesAutoresizingMaskIntoConstraints="NO" id="GKM-VL-11e">
-                                <rect key="frame" x="67.5" y="234" width="240" height="128"/>
+                                <rect key="frame" x="25" y="206" width="325" height="173"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="UNf-0y-kcA"/>
-                                    <constraint firstAttribute="width" constant="240" id="vfM-XV-3ot"/>
+                                    <constraint firstAttribute="height" constant="173" id="UNf-0y-kcA"/>
+                                    <constraint firstAttribute="width" constant="325" id="vfM-XV-3ot"/>
                                 </constraints>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="A apólice de Flávio está prestes a vencer! COD: 24389D" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="IMc-OH-kXx">
-                                <rect key="frame" x="74" y="272" width="227" height="40"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Encontramos um novo plano de seguro de viagens que será ideal para Flávio! Gostaria de enviar um email para notificá-lo?" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="IMc-OH-kXx">
+                                <rect key="frame" x="25" y="257" width="325" height="70"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="227" id="9IX-Bq-Z70"/>
-                                    <constraint firstAttribute="height" constant="40" id="VHT-wE-ekW"/>
+                                    <constraint firstAttribute="width" constant="325" id="9IX-Bq-Z70"/>
+                                    <constraint firstAttribute="height" constant="70" id="VHT-wE-ekW"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zeN-On-GB5">
+                                <rect key="frame" x="132" y="366" width="110" height="47"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="47" id="KVj-6U-Rrz"/>
+                                    <constraint firstAttribute="width" constant="110" id="RWq-fj-bZm"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="Enviar"/>
+                                <connections>
+                                    <action selector="enviarEmailButton:" destination="3fH-Q2-qwK" eventType="touchUpInside" id="6WE-Ug-tBA"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6p3-mo-k8a" firstAttribute="width" secondItem="f3K-Nr-pp8" secondAttribute="width" id="0ph-SA-O7J"/>
                             <constraint firstItem="D3S-rJ-fp8" firstAttribute="top" secondItem="9Xs-FA-oJn" secondAttribute="bottom" constant="-74" id="9ZM-Bv-tsA"/>
-                            <constraint firstItem="IMc-OH-kXx" firstAttribute="centerY" secondItem="GKM-VL-11e" secondAttribute="centerY" constant="-6" id="AOH-l4-fdx"/>
+                            <constraint firstItem="IMc-OH-kXx" firstAttribute="centerY" secondItem="GKM-VL-11e" secondAttribute="centerY" constant="-0.5" id="AOH-l4-fdx"/>
                             <constraint firstItem="IMc-OH-kXx" firstAttribute="centerX" secondItem="GKM-VL-11e" secondAttribute="centerX" id="BVh-wI-6Tg"/>
+                            <constraint firstItem="zeN-On-GB5" firstAttribute="centerX" secondItem="GKM-VL-11e" secondAttribute="centerX" id="GOi-1M-Aye"/>
                             <constraint firstItem="9Xs-FA-oJn" firstAttribute="top" secondItem="kFb-5s-AsQ" secondAttribute="top" constant="45" id="Jo8-i2-j8j"/>
                             <constraint firstItem="9Xs-FA-oJn" firstAttribute="top" secondItem="dpF-B5-Rov" secondAttribute="bottom" constant="-44" id="Ne9-91-xJz"/>
                             <constraint firstItem="D3S-rJ-fp8" firstAttribute="leading" secondItem="9Xs-FA-oJn" secondAttribute="trailing" constant="67" id="Vvb-fR-Zqi"/>
                             <constraint firstItem="GKM-VL-11e" firstAttribute="centerX" secondItem="kFb-5s-AsQ" secondAttribute="centerX" id="a5d-Oh-wyJ"/>
                             <constraint firstAttribute="trailing" secondItem="6p3-mo-k8a" secondAttribute="trailing" id="b8z-Vi-5nY"/>
+                            <constraint firstItem="zeN-On-GB5" firstAttribute="top" secondItem="GKM-VL-11e" secondAttribute="bottom" constant="-13" id="hAl-R2-WaQ"/>
                             <constraint firstItem="9Xs-FA-oJn" firstAttribute="leading" secondItem="kFb-5s-AsQ" secondAttribute="leading" constant="16" id="pUj-2J-Yq2"/>
                             <constraint firstItem="dpF-B5-Rov" firstAttribute="leading" secondItem="9Xs-FA-oJn" secondAttribute="trailing" constant="67" id="qrK-E7-RHj"/>
                             <constraint firstItem="6p3-mo-k8a" firstAttribute="top" secondItem="f3K-Nr-pp8" secondAttribute="top" id="s5G-2I-eRt"/>
-                            <constraint firstItem="GKM-VL-11e" firstAttribute="top" secondItem="kFb-5s-AsQ" secondAttribute="top" constant="214" id="sxj-qH-lgb"/>
+                            <constraint firstItem="GKM-VL-11e" firstAttribute="top" secondItem="kFb-5s-AsQ" secondAttribute="top" constant="186" id="sxj-qH-lgb"/>
                             <constraint firstItem="6p3-mo-k8a" firstAttribute="leading" secondItem="f3K-Nr-pp8" secondAttribute="leading" id="z27-0N-Kqs"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kFb-5s-AsQ"/>
