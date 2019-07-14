@@ -15,7 +15,7 @@ class ViewController: UIViewController {
         
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+                
 //        APIController.get(forPath: "")
 //        let parameters = ["username": "@Arthur", "tweet": "Dale"]
 //        APIController.post(withParameters: parameters)

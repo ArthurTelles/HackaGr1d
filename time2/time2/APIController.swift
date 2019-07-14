@@ -46,6 +46,7 @@ struct APIController {
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("x-api-key", forHTTPHeaderField: "52d2e55d-0561-4178-b812-079491fa1769")
         guard let httpBody = try? JSONSerialization.data(withJSONObject: parameters, options: []) else { return }
         request.httpBody = httpBody
         

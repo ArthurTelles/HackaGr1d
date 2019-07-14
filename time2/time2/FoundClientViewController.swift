@@ -10,8 +10,10 @@ import UIKit
 
 class FoundClientViewController: UIViewController {
     
+    // Variables declaration
     var clientData: ClientStruct!
     
+    // Outlets declaration
     @IBOutlet weak var clientNameLabel: UILabel!
     @IBOutlet weak var clientIDLabel: UILabel!
     
@@ -20,7 +22,8 @@ class FoundClientViewController: UIViewController {
         
         self.clientNameLabel.text = self.clientData.nome
         self.clientIDLabel.text = "ID " + self.clientData.idusuario
+        
+        let parameters = ["Datasets": "emails","q": "doc{09177466561}"]
+        APIController.post(withParameters: parameters)
     }
-    
-    
 }
