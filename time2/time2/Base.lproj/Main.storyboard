@@ -321,10 +321,10 @@
             </objects>
             <point key="canvasLocation" x="997.60000000000002" y="87.706146926536732"/>
         </scene>
-        <!--View Controller-->
+        <!--Search Client View Controller-->
         <scene sceneID="jvq-Qs-tKX">
             <objects>
-                <viewController id="elw-2k-G6B" sceneMemberID="viewController">
+                <viewController id="elw-2k-G6B" customClass="SearchClientViewController" customModule="time2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cva-0n-0UD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -403,6 +403,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="J33-5y-RD3"/>
                     </view>
+                    <connections>
+                        <outlet property="searchTextField" destination="tED-Tp-Cy6" id="GTH-X7-hI6"/>
+                        <segue destination="3fH-Q2-qwK" kind="show" identifier="foundUser" id="kj0-PB-a7K"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O9S-ko-bbh" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="AiA-Wh-frV" userLabel="Exit" sceneMemberID="exit"/>
@@ -569,6 +573,90 @@
                 <exit id="uLC-3E-aKt" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1830" y="88"/>
+        </scene>
+        <!--Found Client View Controller-->
+        <scene sceneID="HWB-5t-wH6">
+            <objects>
+                <viewController id="3fH-Q2-qwK" customClass="FoundClientViewController" customModule="time2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="f3K-Nr-pp8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9Xs-FA-oJn">
+                                <rect key="frame" x="16" y="65" width="132" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="IUj-lV-qrZ"/>
+                                    <constraint firstAttribute="width" constant="132" id="ccp-0x-qa8"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="statusBar" translatesAutoresizingMaskIntoConstraints="NO" id="6p3-mo-k8a">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome do cliente" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dpF-B5-Rov">
+                                <rect key="frame" x="215" y="89" width="129" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="129" id="1VU-9f-rb7"/>
+                                    <constraint firstAttribute="height" constant="20" id="k8p-LS-d0c"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ID @@@" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D3S-rJ-fp8">
+                                <rect key="frame" x="215" y="119" width="129" height="27"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="129" id="Pih-AF-eiA"/>
+                                    <constraint firstAttribute="height" constant="27" id="oY5-wg-EAK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="square" translatesAutoresizingMaskIntoConstraints="NO" id="GKM-VL-11e">
+                                <rect key="frame" x="67.5" y="234" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="UNf-0y-kcA"/>
+                                    <constraint firstAttribute="width" constant="240" id="vfM-XV-3ot"/>
+                                </constraints>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="A apólice de Flávio está prestes a vencer! COD: 24389D" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="IMc-OH-kXx">
+                                <rect key="frame" x="74" y="272" width="227" height="40"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="227" id="9IX-Bq-Z70"/>
+                                    <constraint firstAttribute="height" constant="40" id="VHT-wE-ekW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6p3-mo-k8a" firstAttribute="width" secondItem="f3K-Nr-pp8" secondAttribute="width" id="0ph-SA-O7J"/>
+                            <constraint firstItem="D3S-rJ-fp8" firstAttribute="top" secondItem="9Xs-FA-oJn" secondAttribute="bottom" constant="-74" id="9ZM-Bv-tsA"/>
+                            <constraint firstItem="IMc-OH-kXx" firstAttribute="centerY" secondItem="GKM-VL-11e" secondAttribute="centerY" constant="-6" id="AOH-l4-fdx"/>
+                            <constraint firstItem="IMc-OH-kXx" firstAttribute="centerX" secondItem="GKM-VL-11e" secondAttribute="centerX" id="BVh-wI-6Tg"/>
+                            <constraint firstItem="9Xs-FA-oJn" firstAttribute="top" secondItem="kFb-5s-AsQ" secondAttribute="top" constant="45" id="Jo8-i2-j8j"/>
+                            <constraint firstItem="9Xs-FA-oJn" firstAttribute="top" secondItem="dpF-B5-Rov" secondAttribute="bottom" constant="-44" id="Ne9-91-xJz"/>
+                            <constraint firstItem="D3S-rJ-fp8" firstAttribute="leading" secondItem="9Xs-FA-oJn" secondAttribute="trailing" constant="67" id="Vvb-fR-Zqi"/>
+                            <constraint firstItem="GKM-VL-11e" firstAttribute="centerX" secondItem="kFb-5s-AsQ" secondAttribute="centerX" id="a5d-Oh-wyJ"/>
+                            <constraint firstAttribute="trailing" secondItem="6p3-mo-k8a" secondAttribute="trailing" id="b8z-Vi-5nY"/>
+                            <constraint firstItem="9Xs-FA-oJn" firstAttribute="leading" secondItem="kFb-5s-AsQ" secondAttribute="leading" constant="16" id="pUj-2J-Yq2"/>
+                            <constraint firstItem="dpF-B5-Rov" firstAttribute="leading" secondItem="9Xs-FA-oJn" secondAttribute="trailing" constant="67" id="qrK-E7-RHj"/>
+                            <constraint firstItem="6p3-mo-k8a" firstAttribute="top" secondItem="f3K-Nr-pp8" secondAttribute="top" id="s5G-2I-eRt"/>
+                            <constraint firstItem="GKM-VL-11e" firstAttribute="top" secondItem="kFb-5s-AsQ" secondAttribute="top" constant="214" id="sxj-qH-lgb"/>
+                            <constraint firstItem="6p3-mo-k8a" firstAttribute="leading" secondItem="f3K-Nr-pp8" secondAttribute="leading" id="z27-0N-Kqs"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="kFb-5s-AsQ"/>
+                    </view>
+                    <connections>
+                        <outlet property="clientIDLabel" destination="D3S-rJ-fp8" id="2si-9B-bff"/>
+                        <outlet property="clientNameLabel" destination="dpF-B5-Rov" id="lt6-VX-RDG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xFK-4w-lhn" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1829.5999999999999" y="857.72113943028489"/>
         </scene>
     </scenes>
     <resources>
