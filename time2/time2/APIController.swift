@@ -53,6 +53,7 @@ struct APIController {
         let session = URLSession.shared
         session.dataTask(with: request) { (data, response, error) in
             if let response = response {
+                print("\n\nTô aqui caraio")
                 print(response)
             }
             
