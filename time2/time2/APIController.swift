@@ -42,8 +42,6 @@ struct APIController {
     /// - Parameter parameters: Parameters that are going to be "posted".
     static func post(withParameters parameters: [String:Any]) {
         
-        let parameters = ["username": "@kilo_loco", "tweet": "HelloWorld"]
-        
         guard let url = URL(string: "https://jsonplaceholder.typicode.com/posts") else { return }
         var request = URLRequest(url: url)
         request.httpMethod = "POST"

@@ -28,9 +28,9 @@ class ViewController: UIViewController {
 //            let clientData = snapshot.value as? String
 //        }
         
-        self.userStruct = ClientStruct(cpf: "", endereco: "", idade: "", idusuario: "", nome: "", profissao: "", renda: "", rg: "", seguro: "", sexo: "", telefone: "")
-        
-        getClientData(withID: "5GIltNZpQGau9K1hvluS")
+//        self.userStruct = ClientStruct(cpf: "", endereco: "", idade: "", idusuario: "", nome: "", profissao: "", renda: "", rg: "", seguro: "", sexo: "", telefone: "")
+//
+//        getClientData(withID: "5GIltNZpQGau9K1hvluS")
     }
     
     /// This function makes a call for the Firebase server to get the right user info.
